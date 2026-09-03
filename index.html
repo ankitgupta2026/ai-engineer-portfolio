@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="AI Engineer Portfolio — Building intelligent and production-ready AI systems."
-    >
-
-    <meta
-        name="keywords"
-        content="AI Engineer, Machine Learning, Deep Learning, Generative AI, RAG, LLM"
+        content="AI Engineer portfolio showcasing AI, Machine Learning, GenAI and production-ready projects."
     >
 
     <title>AI Engineer | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
@@ -25,53 +27,42 @@
     <!-- ================= NAVBAR ================= -->
 
     <header class="navbar">
-
-        <div class="container nav-content">
+        <div class="container nav-container">
 
             <a href="#home" class="logo">
-                <span>&lt;</span>AI<span>/&gt;</span>
+                AI<span>.</span>
             </a>
 
-            <nav class="nav-links">
+            <nav class="nav-menu" id="navMenu">
 
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#mission">Mission</a>
+                <a href="#experience">Experience</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#blog">Blog</a>
                 <a href="#contact">Contact</a>
 
             </nav>
 
-            <a href="#contact" class="nav-button">
-                Let's Connect
-            </a>
-
-            <button class="menu-button" id="menuButton">
+            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
                 ☰
             </button>
 
         </div>
-
     </header>
 
 
-    <!-- ================= MAIN ================= -->
+    <!-- ================= HERO ================= -->
 
     <main>
 
-
-        <!-- ================= HERO ================= -->
-
-        <section id="home" class="hero">
+        <section class="hero" id="home">
 
             <div class="container hero-container">
 
                 <div class="hero-content">
-
-                    <div class="badge">
-                        🚀 90-DAY AI ENGINEERING MISSION
-                    </div>
 
                     <p class="eyebrow">
                         AI ENGINEER PORTFOLIO
@@ -80,46 +71,39 @@
                     <h1>
                         Building
                         <span>Intelligent</span>
-                        &
-                        <span>Production-Ready</span>
-                        AI Systems.
+                        & Production-Ready AI Systems.
                     </h1>
 
                     <p class="hero-description">
-
-                        I build AI-powered applications using
-                        Machine Learning, Deep Learning,
-                        Generative AI, LLMs, RAG and modern
-                        backend technologies.
-
+                        I build AI, Machine Learning and Generative AI
+                        applications focused on solving real-world problems
+                        and turning ideas into useful products.
                     </p>
 
+                    <div class="hero-location">
+                        📍 India
+                    </div>
 
                     <div class="hero-buttons">
 
-                        <a href="#projects" class="button primary">
-                            View Projects →
+                        <a href="#projects" class="btn btn-primary">
+                            View Projects
                         </a>
 
-                        <a href="#" class="button secondary">
+                        <a href="resume.pdf" class="btn btn-secondary" download>
                             Download Resume
                         </a>
 
                     </div>
 
-
                     <div class="social-links">
 
                         <a href="#" target="_blank">
-                            GitHub
+                            GitHub ↗
                         </a>
 
                         <a href="#" target="_blank">
-                            LinkedIn
-                        </a>
-
-                        <a href="mailto:your@email.com">
-                            Email
+                            LinkedIn ↗
                         </a>
 
                     </div>
@@ -127,63 +111,45 @@
                 </div>
 
 
-                <!-- ================= AI VISUAL ================= -->
+                <!-- Hero Visual -->
 
                 <div class="hero-visual">
 
                     <div class="ai-card">
 
-                        <div class="card-header">
-
-                            <div class="status">
-                                <span></span>
-                                SYSTEM ONLINE
-                            </div>
-
-                            <div>
-                                AI_ENGINEER
-                            </div>
-
+                        <div class="card-top">
+                            <span class="status-dot"></span>
+                            AI SYSTEM ONLINE
                         </div>
-
-
-                        <div class="ai-orb">
-
-                            <div class="orb-core">
-                                AI
-                            </div>
-
-                        </div>
-
 
                         <div class="terminal">
 
                             <p>
                                 <span class="green">const</span>
-                                role =
-                                <span class="yellow">
-                                    "AI Engineer"
-                                </span>;
+                                engineer = {
+                            </p>
+
+                            <p class="indent">
+                                skills: [
+                            </p>
+
+                            <p class="indent-2">
+                                "Python",
+                                "ML",
+                                "GenAI",
+                                "RAG"
+                            </p>
+
+                            <p class="indent">
+                                ],
+                            </p>
+
+                            <p class="indent">
+                                focus: "AI Engineering"
                             </p>
 
                             <p>
-                                <span class="green">const</span>
-                                focus =
-                                <span class="yellow">
-                                    "Build AI Systems"
-                                </span>;
-                            </p>
-
-                            <p>
-                                <span class="green">const</span>
-                                mission =
-                                <span class="yellow">
-                                    "Learn → Build → Deploy"
-                                </span>;
-                            </p>
-
-                            <p class="cursor">
-                                _
+                                };
                             </p>
 
                         </div>
@@ -204,31 +170,23 @@
             <div class="container stats-grid">
 
                 <div class="stat-card">
-
-                    <strong>0+</strong>
+                    <strong class="counter" data-target="0">0</strong>
                     <span>AI Projects</span>
-
                 </div>
 
                 <div class="stat-card">
-
-                    <strong>0+</strong>
+                    <strong class="counter" data-target="0">0</strong>
                     <span>DSA Problems</span>
-
                 </div>
 
                 <div class="stat-card">
-
-                    <strong>0+</strong>
+                    <strong class="counter" data-target="0">0</strong>
                     <span>AI/ML Skills</span>
-
                 </div>
 
                 <div class="stat-card">
-
-                    <strong>0+</strong>
+                    <strong class="counter" data-target="0">0</strong>
                     <span>Deployed Apps</span>
-
                 </div>
 
             </div>
@@ -236,385 +194,327 @@
         </section>
 
 
-        <!-- ================= ABOUT ================= -->
+       <!-- ================= ABOUT ================= -->
 
-        <section id="about" class="section">
+<section class="about-section" id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">01 — ABOUT ME</p>
+
+            <h2>
+                Building AI systems that
+                <span>solve real problems.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-main">
+
+                <p class="about-intro">
+                    I'm an aspiring AI Engineer focused on building
+                    intelligent, practical and production-ready AI
+                    applications.
+                </p>
+
+                <p>
+                    My journey started with programming and gradually
+                    expanded into Machine Learning, Deep Learning,
+                    Generative AI, RAG and AI Engineering.
+                </p>
+
+                <p>
+                    I believe the best way to learn AI is to build.
+                    That's why I focus on turning concepts into real
+                    applications, deploying them and documenting what
+                    I learn.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-card-item">
+                    <span>Focus</span>
+                    <strong>AI Engineering</strong>
+                </div>
+
+                <div class="about-card-item">
+                    <span>Currently Learning</span>
+                    <strong>GenAI + RAG</strong>
+                </div>
+
+                <div class="about-card-item">
+                    <span>Building</span>
+                    <strong>Production AI Apps</strong>
+                </div>
+
+                <div class="about-card-item">
+                    <span>Mission</span>
+                    <strong>Become AI Engineer</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mission Timeline -->
+
+        <div class="mission-timeline">
+
+            <div class="timeline-item active">
+                <span>01</span>
+                <strong>START</strong>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <span>02</span>
+                <strong>LEARN</strong>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <span>03</span>
+                <strong>BUILD</strong>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <span>04</span>
+                <strong>DEPLOY</strong>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item">
+                <span>05</span>
+                <strong>INTERVIEW READY</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="skills-section" id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="section-label">02 — SKILLS</p>
+
+            <h2>
+                My AI Engineering
+                <span>toolkit.</span>
+            </h2>
+
+            <p>
+                Technologies and tools I'm using to build,
+                deploy and improve AI applications.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- Programming -->
+
+            <div class="skill-card">
+
+                <div class="skill-number">01</div>
+
+                <h3>Programming</h3>
+
+                <p>
+                    Core programming and development tools.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>Linux</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ML -->
+
+            <div class="skill-card">
+
+                <div class="skill-number">02</div>
+
+                <h3>AI / Machine Learning</h3>
+
+                <p>
+                    Data analysis, machine learning and
+                    deep learning fundamentals.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>NumPy</span>
+                    <span>Pandas</span>
+                    <span>Scikit-learn</span>
+                    <span>PyTorch</span>
+                    <span>Deep Learning</span>
+                    <span>NLP</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- GenAI -->
+
+            <div class="skill-card">
+
+                <div class="skill-number">03</div>
+
+                <h3>Generative AI</h3>
+
+                <p>
+                    Building applications powered by modern
+                    LLM technologies.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>LLMs</span>
+                    <span>RAG</span>
+                    <span>Embeddings</span>
+                    <span>Vector DB</span>
+                    <span>AI Agents</span>
+                    <span>Prompt Engineering</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Backend -->
+
+            <div class="skill-card">
+
+                <div class="skill-number">04</div>
+
+                <h3>Backend & Deployment</h3>
+
+                <p>
+                    Building APIs and deploying AI applications.
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>FastAPI</span>
+                    <span>REST APIs</span>
+                    <span>Docker</span>
+                    <span>Cloud</span>
+                    <span>CI/CD</span>
+                    <span>MLOps</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- ================= PROJECTS PLACEHOLDER ================= -->
+
+        <section class="placeholder-section" id="projects">
 
             <div class="container">
 
-                <p class="section-label">
-                    01 — ABOUT
-                </p>
+                <p class="section-label">03 — PROJECTS</p>
 
                 <h2>
-                    From Learning AI
-                    <br>
-                    to Building AI.
+                    Things I
+                    <span>build.</span>
                 </h2>
 
-                <div class="about-grid">
-
-                    <p class="section-description">
-
-                        My goal is to become a production-ready
-                        AI Engineer by developing strong fundamentals,
-                        building real-world AI applications and
-                        deploying scalable systems.
-
-                    </p>
-
-                    <div class="about-points">
-
-                        <div>
-                            <span>01</span>
-                            Learn
-                        </div>
-
-                        <div>
-                            <span>02</span>
-                            Build
-                        </div>
-
-                        <div>
-                            <span>03</span>
-                            Deploy
-                        </div>
-
-                        <div>
-                            <span>04</span>
-                            Improve
-                        </div>
-
-                    </div>
-
-                </div>
+                <p>
+                    Featured AI projects will be added here.
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- ================= SKILLS ================= -->
+        <!-- ================= EXPERIENCE ================= -->
 
-        <section id="skills" class="section">
+        <section class="placeholder-section" id="experience">
 
             <div class="container">
 
-                <p class="section-label">
-                    02 — SKILLS
-                </p>
+                <p class="section-label">04 — EXPERIENCE</p>
 
                 <h2>
-                    AI Engineering Stack
+                    Experience &
+                    <span>Journey.</span>
                 </h2>
-
-
-                <div class="skills-grid">
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Programming
-                        </h3>
-
-                        <p>
-                            Python · SQL · Git · Linux
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Machine Learning
-                        </h3>
-
-                        <p>
-                            NumPy · Pandas · Scikit-learn
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Deep Learning
-                        </h3>
-
-                        <p>
-                            PyTorch · Neural Networks · NLP
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Generative AI
-                        </h3>
-
-                        <p>
-                            LLMs · RAG · Embeddings · AI Agents
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            05
-                        </div>
-
-                        <h3>
-                            Backend
-                        </h3>
-
-                        <p>
-                            FastAPI · REST APIs · Docker
-                        </p>
-
-                    </div>
-
-
-                    <div class="skill-card">
-
-                        <div class="skill-number">
-                            06
-                        </div>
-
-                        <h3>
-                            Cloud & MLOps
-                        </h3>
-
-                        <p>
-                            Cloud · CI/CD · MLOps
-                        </p>
-
-                    </div>
-
-                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ================= PROJECTS ================= -->
+        <!-- ================= ACHIEVEMENTS ================= -->
 
-        <section id="projects" class="section">
+        <section class="placeholder-section" id="achievements">
 
             <div class="container">
 
-                <p class="section-label">
-                    03 — PROJECTS
-                </p>
+                <p class="section-label">05 — ACHIEVEMENTS</p>
 
                 <h2>
-                    Things I'm Building
+                    Milestones &
+                    <span>Achievements.</span>
                 </h2>
-
-
-                <div class="projects-grid">
-
-
-                    <article class="project-card">
-
-                        <span class="project-number">
-                            PROJECT 01
-                        </span>
-
-                        <h3>
-                            AI Resume Analyzer
-                        </h3>
-
-                        <p>
-                            AI-powered application for resume analysis,
-                            skill extraction and job matching.
-                        </p>
-
-                        <div class="tech-stack">
-                            Python · FastAPI · LLM · RAG
-                        </div>
-
-                        <a href="#">
-                            View Project →
-                        </a>
-
-                    </article>
-
-
-                    <article class="project-card">
-
-                        <span class="project-number">
-                            PROJECT 02
-                        </span>
-
-                        <h3>
-                            RAG PDF Chatbot
-                        </h3>
-
-                        <p>
-                            Chat with documents using
-                            Retrieval-Augmented Generation.
-                        </p>
-
-                        <div class="tech-stack">
-                            Python · RAG · Embeddings · Vector DB
-                        </div>
-
-                        <a href="#">
-                            View Project →
-                        </a>
-
-                    </article>
-
-
-                    <article class="project-card">
-
-                        <span class="project-number">
-                            PROJECT 03
-                        </span>
-
-                        <h3>
-                            AI Interview Coach
-                        </h3>
-
-                        <p>
-                            AI-powered interview practice and
-                            answer evaluation system.
-                        </p>
-
-                        <div class="tech-stack">
-                            Python · LLM · FastAPI
-                        </div>
-
-                        <a href="#">
-                            View Project →
-                        </a>
-
-                    </article>
-
-
-                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ================= MISSION ================= -->
+        <!-- ================= BLOG ================= -->
 
-        <section id="mission" class="section mission-section">
+        <section class="placeholder-section" id="blog">
 
             <div class="container">
 
-                <p class="section-label">
-                    04 — MISSION
-                </p>
+                <p class="section-label">06 — BLOG</p>
 
                 <h2>
-                    90-Day AI Engineering Mission
+                    What I'm
+                    <span>learning.</span>
                 </h2>
-
-                <p class="mission-description">
-                    Learn the fundamentals, build real systems,
-                    deploy applications and become interview-ready.
-                </p>
-
-
-                <div class="mission-flow">
-
-                    <div>
-                        <span>01</span>
-                        Python
-                    </div>
-
-                    <div>
-                        <span>02</span>
-                        Machine Learning
-                    </div>
-
-                    <div>
-                        <span>03</span>
-                        Deep Learning
-                    </div>
-
-                    <div>
-                        <span>04</span>
-                        Generative AI
-                    </div>
-
-                    <div>
-                        <span>05</span>
-                        AI Engineering
-                    </div>
-
-                    <div>
-                        <span>06</span>
-                        Production
-                    </div>
-
-                    <div>
-                        <span>07</span>
-                        Interviews
-                    </div>
-
-                    <div>
-                        <span>08</span>
-                        Career
-                    </div>
-
-                </div>
-
-
-                <div class="progress-container">
-
-                    <div class="progress-header">
-
-                        <span>
-                            Mission Progress
-                        </span>
-
-                        <strong id="progressText">
-                            1.1%
-                        </strong>
-
-                    </div>
-
-                    <div class="progress">
-
-                        <div
-                            class="progress-bar"
-                            id="progressBar">
-                        </div>
-
-                    </div>
-
-                    <p>
-                        Day 01 / 90
-                    </p>
-
-                </div>
 
             </div>
 
@@ -623,29 +523,27 @@
 
         <!-- ================= CONTACT ================= -->
 
-        <section id="contact" class="section contact-section">
+        <section class="contact-section" id="contact">
 
-            <div class="container">
+            <div class="container contact-container">
 
-                <p class="section-label">
-                    05 — CONTACT
-                </p>
+                <p class="section-label">07 — CONTACT</p>
 
                 <h2>
-                    Let's Build Something
-                    <br>
-                    With AI.
+                    Let's build something
+                    <span>with AI.</span>
                 </h2>
 
                 <p>
-                    Open to AI engineering opportunities,
-                    collaborations and interesting projects.
+                    Have an idea, opportunity or project?
+                    Let's connect.
                 </p>
 
                 <a
-                    href="mailto:your@email.com"
-                    class="button primary">
-                    Get In Touch →
+                    href="mailto:your.email@example.com"
+                    class="btn btn-primary"
+                >
+                    Get In Touch
                 </a>
 
             </div>
@@ -659,14 +557,14 @@
 
     <footer>
 
-        <div class="container footer-content">
+        <div class="container footer-container">
 
             <p>
                 © 2026 AI Engineer Portfolio
             </p>
 
             <p>
-                Learn · Build · Deploy · Improve
+                Built with HTML • CSS • JavaScript
             </p>
 
         </div>
