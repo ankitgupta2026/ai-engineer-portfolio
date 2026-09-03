@@ -1,59 +1,87 @@
-// ========================================
-// AI ENGINEER PORTFOLIO
-// DAY 01
-// ========================================
+// ==============================
+// MOBILE NAVIGATION
+// ==============================
 
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-// Current Mission Day
-
-const currentDay = 1;
-const totalDays = 90;
-
-
-// Calculate Progress
-
-const missionProgress =
-    (currentDay / totalDays) * 100;
-
-
-// Update Progress Bar
-
-const progressBar =
-    document.getElementById("progressBar");
-
-const progressText =
-    document.getElementById("progressText");
-
-
-if (progressBar) {
-
-    progressBar.style.width =
-        `${missionProgress}%`;
-
-}
-
-
-if (progressText) {
-
-    progressText.textContent =
-        `${missionProgress.toFixed(1)}%`;
-
-}
-
-
-// ========================================
-// MOBILE MENU
-// ========================================
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const navLinks =
-    document.querySelector(".nav-links");
-
-
-menuButton.addEventListener("click", () => {
-
-    navLinks.classList.toggle("mobile-active");
-
+menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
 });
+
+
+// Close menu after clicking a link
+
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
+
+
+// ==============================
+// STATS COUNTER
+// ==============================
+
+const counters = document.querySelectorAll(".counter");
+
+const animateCounter = (counter) => {
+
+    const target = Number(counter.dataset.target);
+
+    let current = 0;
+
+    const increment = target / 40;
+
+    const updateCounter = () => {
+
+        if (current < target) {
+
+            current += increment;
+
+            counter.textContent = Math.ceil(current);
+
+            requestAnimationFrame(updateCounter);
+
+        } else {
+
+            counter.textContent = target;
+
+        }
+    };
+
+    updateCounter();
+};
+
+
+// Start counters when visible
+
+const observer = new IntersectionObserver(
+    (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                counters.forEach(animateCounter);
+
+                observer.disconnect();
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.4
+    }
+);
+
+
+const statsSection = document.querySelector(".stats-section");
+
+if (statsSection) {
+    observer.observe(statsSection);
+}
