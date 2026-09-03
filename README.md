@@ -7,7 +7,7 @@ My journey to become a production-ready AI Engineer.
 | Day | Focus | Status |
 |---|---|---|
 | Day 01 | Portfolio Foundation | ✅ |
-| Day 02 | Project Architecture | ⬜ |
+| Day 02 | Project Architecture | ✅ |
 | Day 03 | GitHub Setup | ⬜ |
 | Day 04 | Design System | ⬜ |
 | Day 05 | Navbar | ⬜ |
