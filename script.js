@@ -85,3 +85,27 @@ const statsSection = document.querySelector(".stats-section");
 if (statsSection) {
     observer.observe(statsSection);
 }
+// ================================
+// PROJECT CARD REVEAL
+// ================================
+
+const projectCards = document.querySelectorAll(".project-card");
+
+const projectObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-project");
+            }
+
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+projectCards.forEach((card) => {
+    projectObserver.observe(card);
+});
