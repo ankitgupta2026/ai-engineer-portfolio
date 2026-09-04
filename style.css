@@ -688,3 +688,179 @@ footer {
     }
 
 }
+/* ================================
+   PROJECTS
+================================ */
+
+.projects-section {
+    background: #080808;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.section-label {
+    color: #00ff9d;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: #999;
+    line-height: 1.7;
+}
+
+
+/* Projects Grid */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Project Card */
+
+.project-card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid #222;
+    border-radius: 16px;
+    background: #0d0d0d;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff9d;
+    box-shadow: 0 15px 40px rgba(0, 255, 157, 0.08);
+}
+
+
+/* Project Number */
+
+.project-number {
+    color: #00ff9d;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+
+/* Project Title */
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+
+/* Description */
+
+.project-card p {
+    color: #999;
+    line-height: 1.7;
+    min-height: 120px;
+}
+
+
+/* Tech Stack */
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 25px 0;
+}
+
+.project-tech span {
+    padding: 7px 11px;
+    border: 1px solid #292929;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #bbb;
+    background: #111;
+}
+
+
+/* Buttons */
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.project-btn {
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.project-btn:hover {
+    border-color: #00ff9d;
+    color: #00ff9d;
+}
+
+.project-btn.primary {
+    background: #00ff9d;
+    color: #000;
+    border-color: #00ff9d;
+}
+
+.project-btn.primary:hover {
+    opacity: 0.8;
+}
+
+
+/* ================================
+   PROJECT RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+}
+.project-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.project-card.show-project {
+    opacity: 1;
+    transform: translateY(0);
+}
