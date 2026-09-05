@@ -109,3 +109,30 @@ const projectObserver = new IntersectionObserver(
 projectCards.forEach((card) => {
     projectObserver.observe(card);
 });
+// ================================
+// CASE STUDY REVEAL
+// ================================
+
+const caseStudies = document.querySelectorAll(".case-study");
+
+const caseStudyObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-case-study");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+
+caseStudies.forEach((caseStudy) => {
+    caseStudyObserver.observe(caseStudy);
+});
