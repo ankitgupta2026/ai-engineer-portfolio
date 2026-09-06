@@ -136,3 +136,30 @@ const caseStudyObserver = new IntersectionObserver(
 caseStudies.forEach((caseStudy) => {
     caseStudyObserver.observe(caseStudy);
 });
+// ================================
+// JOURNEY ANIMATION
+// ================================
+
+const journeyItems = document.querySelectorAll(".journey-item");
+
+const journeyObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-journey");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+journeyItems.forEach((item) => {
+    journeyObserver.observe(item);
+});
