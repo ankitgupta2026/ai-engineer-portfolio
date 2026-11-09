@@ -1,1176 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="AI Engineer portfolio showcasing AI, Machine Learning, GenAI and production-ready projects."
-    >
-
-    <title>AI Engineer | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ankit Gupta | AI Engineer</title>
+<meta name="description" content="Ankit Gupta, AI Engineer. Multi-agent systems, RAG, LLM applications and machine learning built with Python, LangGraph and FastAPI.">
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ankit Gupta | AI Engineer">
+<meta property="og:description" content="Building intelligent AI systems that solve real-world problems. Multi-agent systems, RAG and LLM applications.">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ankit Gupta","jobTitle":"AI Engineer","email":"mailto:ankitguptaa2026@gmail.com","alumniOf":"BM Group of Institutions","sameAs":["https://github.com/ankitgupta2026","https://www.linkedin.com/in/ankitgupta2026/"]}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101a33'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='%237c9bff'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--panel:rgba(255,255,255,.04);--panel2:rgba(255,255,255,.07);--line:rgba(160,185,255,.16);--ink:#eef2fb;--muted:#9aa6bf;--a:#7c9bff;--b:#45e0c8;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--bg)}
+body{margin:0;background:radial-gradient(900px 500px at 85% -5%,rgba(124,155,255,.16),transparent 60%),radial-gradient(700px 400px at 0% 30%,rgba(69,224,200,.07),transparent 60%),var(--bg);color:var(--ink);font:400 1rem/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:70}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--a);color:#06101f;padding:8px 14px;border-radius:8px;z-index:100}.skip:focus{left:12px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(7,11,20,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:66px}
+.brand{font-weight:800;letter-spacing:-.03em}
+nav{display:flex;align-items:center;gap:24px;font-size:.9rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+nav .cta{color:#06101f;background:linear-gradient(110deg,var(--a),var(--b));padding:7px 16px;border-radius:9px;font-weight:600}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:9px;padding:7px 13px;font:inherit}
+.hero{padding:96px 0 72px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;font-size:.85rem;color:var(--muted);border:1px solid var(--line);background:var(--panel);padding:6px 14px;border-radius:99px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 4px rgba(69,224,200,.16)}
+h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.045em;font-weight:800;margin:22px 0 14px}
+.grad{background:linear-gradient(100deg,#b4c3ff,var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.title{color:var(--a);font-weight:600;margin:0 0 16px}
+.lead{color:var(--muted);font-size:1.1rem;max-width:36rem;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:11px;border:1px solid var(--line);background:var(--panel);font:600 .93rem Inter,sans-serif;color:var(--ink);cursor:pointer;transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--a)}
+.btn.pri{color:#06101f;border:0;background:linear-gradient(110deg,var(--a),var(--b))}
+.social{display:flex;gap:12px;margin-top:26px}
+.social a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--muted)}
+.social a:hover{color:var(--ink);border-color:var(--a)}
+.social svg{width:19px;height:19px;fill:currentColor}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:18px;backdrop-filter:blur(8px)}
+.stats{padding:6px 22px}
+.stats div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-top:1px solid var(--line);font-size:.93rem}
+.stats div:first-child{border-top:0}.stats span{color:var(--muted)}.stats b{text-align:right;font-weight:600}
+section{padding:84px 0;border-top:1px solid var(--line)}
+.head{margin-bottom:34px;max-width:40rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.04em;line-height:1.12;margin:0 0 10px}
+.head p{margin:0;color:var(--muted)}
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:24px}
+.about .glass{padding:28px}.about p{margin:0 0 14px;color:var(--muted)}.about p:last-child{margin:0}
+.focus{display:grid;gap:12px;align-content:start}
+.focus div{padding:18px 20px}.focus b{display:block}.focus span{color:var(--muted);font-size:.9rem}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill{padding:22px}.skill h3{margin:0 0 12px;font-size:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.82rem;padding:4px 11px;border-radius:99px;background:var(--panel2);border:1px solid var(--line);color:#d5def2}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.proj{display:flex;flex-direction:column;padding:0;overflow:hidden;transition:border-color .25s,transform .25s}
+.proj:hover{border-color:rgba(124,155,255,.5);transform:translateY(-3px)}
+.viz{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:20px 16px;background:linear-gradient(135deg,rgba(124,155,255,.14),rgba(69,224,200,.06));border-bottom:1px solid var(--line);font-size:.8rem;font-weight:600}
+.viz span{padding:5px 8px;font-size:.76rem;border-radius:8px;background:rgba(7,11,20,.6);border:1px solid var(--line)}
+.viz i{color:var(--b);font-style:normal}
+.pbody{padding:24px;flex:1;display:flex;flex-direction:column}
+.kind{color:var(--b);font-size:.85rem;font-weight:600}
+.proj h3{margin:4px 0 10px;font-size:1.3rem;letter-spacing:-.02em}
+.proj p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+details{margin:14px 0;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600;font-size:.92rem;color:var(--a);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:" +"}details[open] summary:after{content:" –"}
+details ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.92rem}details li{margin-bottom:4px}
+.links{display:flex;gap:18px;margin-top:auto;padding-top:14px;font-weight:600;font-size:.9rem}
+.links a{color:#c3d0ff;border-bottom:1px solid transparent}.links a:hover{border-color:currentColor}
+.tl{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{padding:22px}.card small{color:var(--b);font-size:.84rem;font-weight:600}.card h3{margin:4px 0 4px;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.92rem}
+.empty{border-style:dashed;background:transparent}.empty h3,.empty p{color:var(--muted)}
+.resume{display:grid;grid-template-columns:.6fr 1.4fr;gap:28px;padding:28px;align-items:center}
+.doc{background:#fff;border-radius:10px;padding:18px;color:#222;font-size:.62rem;line-height:1.4;box-shadow:0 18px 40px -20px #000;overflow:hidden}
+.doc b{display:block;font-size:.95rem;text-align:center}.doc em{display:block;text-align:center;color:#555;margin-bottom:8px;font-style:normal}
+.doc u{display:block;color:#b3262d;text-decoration:none;font-weight:700;border-bottom:1px solid #b3262d;margin:8px 0 3px}
+.resume h3{margin:0 0 8px;font-size:1.4rem}.resume p{color:var(--muted);margin:0 0 20px}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+form{display:grid;gap:14px;padding:26px}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:start}
+.cinfo{padding:26px}.cinfo ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:14px}.cinfo span{display:block;font-size:.85rem;color:var(--muted)}.cinfo a{color:#c3d0ff;font-weight:600}
+label{font-size:.88rem;font-weight:600}
+input,textarea{width:100%;margin-top:6px;font:inherit;font-weight:400;color:var(--ink);background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+input:focus,textarea:focus{outline:2px solid var(--a);outline-offset:1px}
+textarea{min-height:120px;resize:vertical}
+.note{margin:0;font-size:.82rem;color:var(--muted)}
+form .btn{justify-self:start}
+footer{border-top:1px solid var(--line);padding:26px 0 34px;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#top{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(16,24,44,.9);color:var(--ink);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;z-index:55;font-size:1.1rem}
+#top.show{opacity:1;pointer-events:auto}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:860px){
+.menu{display:block}
+nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;gap:14px;padding:18px 20px;background:#0b1120;border-bottom:1px solid var(--line)}
+nav.open{display:flex}
+.hero,.about,.contact,.resume{grid-template-columns:1fr}
+.hero{padding:60px 0 48px}
+.skills,.projects,.tl,.cgrid{grid-template-columns:1fr}
+section{padding:60px 0}
+.resume .doc{max-width:240px}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes shift{to{background-position:100% 0}}
+@keyframes drift{to{transform:translate3d(4%,-3%,0) scale(1.08)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(69,224,200,.16)}50%{box-shadow:0 0 0 9px rgba(69,224,200,0)}}
+@keyframes node{0%,22%{border-color:var(--b);box-shadow:0 0 14px rgba(69,224,200,.35);color:#fff}32%,100%{border-color:var(--line);box-shadow:none}}
+body:after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(500px 360px at 20% 30%,rgba(124,155,255,.10),transparent 70%),radial-gradient(460px 340px at 80% 70%,rgba(69,224,200,.08),transparent 70%);animation:drift 22s ease-in-out infinite alternate}
+.grad{background-size:200% 100%;animation:shift 8s ease-in-out infinite alternate}
+.pill i{animation:pulse 2.4s ease-in-out infinite}
+.hero>div:first-child>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero>aside{animation:up .9s .35s cubic-bezier(.2,.7,.2,1) both}
+.js .skills.in>.skill,.js .tl.in>.card,.js .cgrid.in>.card,.js .about.in .focus>div{animation:up .6s cubic-bezier(.2,.7,.2,1) both}
+.viz span{animation:node 3.6s ease-in-out infinite}
+.viz span:nth-of-type(2){animation-delay:.7s}.viz span:nth-of-type(3){animation-delay:1.4s}.viz span:nth-of-type(4){animation-delay:2.1s}.viz span:nth-of-type(5){animation-delay:2.8s}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--a),var(--b));z-index:80}
+nav a.act{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}#bar{display:none}}
+.mail{margin:22px 0 0;color:var(--muted);font-size:.95rem}.mail a{color:#c3d0ff;font-weight:600;border-bottom:1px solid var(--line)}.mail a:hover{border-color:var(--a)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}*{transition-duration:.01ms!important}}
+@media print{:root{--bg:#fff;--panel:#f5f6f8;--panel2:#eee;--line:#ccc;--ink:#111;--muted:#444;--a:#1a3ab8;--b:#0b6b5c;color-scheme:light}html,body{background:#fff}body:before,header,.social,.actions,#top,form,.pill,.viz,.skip{display:none!important}.glass{backdrop-filter:none;break-inside:avoid}.js .rv{opacity:1;transform:none}.grad{color:#1a3ab8;background:none}section{padding:26px 0}.chips span{color:#111}.hero{padding:20px 0}.proj{transform:none}}
+</style>
 </head>
-
 <body>
-
-    <!-- ================= NAVBAR ================= -->
-
-    <header class="navbar">
-        <div class="container nav-container">
-
-            <a href="#home" class="logo">
-                AI<span>.</span>
-            </a>
-
-            <nav class="nav-menu" id="navMenu">
-
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-
-            </nav>
-
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                ☰
-            </button>
-
-        </div>
-    </header>
-
-
-    <!-- ================= HERO ================= -->
-
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="container hero-container">
-
-                <div class="hero-content">
-
-                    <p class="eyebrow">
-                        AI ENGINEER PORTFOLIO
-                    </p>
-
-                    <h1>
-                        Building
-                        <span>Intelligent</span>
-                        & Production-Ready AI Systems.
-                    </h1>
-
-                    <p class="hero-description">
-                        I build AI, Machine Learning and Generative AI
-                        applications focused on solving real-world problems
-                        and turning ideas into useful products.
-                    </p>
-
-                    <div class="hero-location">
-                        📍 India
-                    </div>
-
-                    <div class="hero-buttons">
-
-                        <a href="#projects" class="btn btn-primary">
-                            View Projects
-                        </a>
-
-                        <a href="resume.pdf" class="btn btn-secondary" download>
-                            Download Resume
-                        </a>
-
-                    </div>
-
-                    <div class="social-links">
-
-                        <a href="#" target="_blank">
-                            GitHub ↗
-                        </a>
-
-                        <a href="#" target="_blank">
-                            LinkedIn ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Hero Visual -->
-
-                <div class="hero-visual">
-
-                    <div class="ai-card">
-
-                        <div class="card-top">
-                            <span class="status-dot"></span>
-                            AI SYSTEM ONLINE
-                        </div>
-
-                        <div class="terminal">
-
-                            <p>
-                                <span class="green">const</span>
-                                engineer = {
-                            </p>
-
-                            <p class="indent">
-                                skills: [
-                            </p>
-
-                            <p class="indent-2">
-                                "Python",
-                                "ML",
-                                "GenAI",
-                                "RAG"
-                            </p>
-
-                            <p class="indent">
-                                ],
-                            </p>
-
-                            <p class="indent">
-                                focus: "AI Engineering"
-                            </p>
-
-                            <p>
-                                };
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= STATS ================= -->
-
-        <section class="stats-section">
-
-            <div class="container stats-grid">
-
-                <div class="stat-card">
-                    <strong class="counter" data-target="0">0</strong>
-                    <span>AI Projects</span>
-                </div>
-
-                <div class="stat-card">
-                    <strong class="counter" data-target="0">0</strong>
-                    <span>DSA Problems</span>
-                </div>
-
-                <div class="stat-card">
-                    <strong class="counter" data-target="0">0</strong>
-                    <span>AI/ML Skills</span>
-                </div>
-
-                <div class="stat-card">
-                    <strong class="counter" data-target="0">0</strong>
-                    <span>Deployed Apps</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-       <!-- ================= ABOUT ================= -->
-
-<section class="about-section" id="about">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">01 — ABOUT ME</p>
-
-            <h2>
-                Building AI systems that
-                <span>solve real problems.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div class="about-main">
-
-                <p class="about-intro">
-                    I'm an aspiring AI Engineer focused on building
-                    intelligent, practical and production-ready AI
-                    applications.
-                </p>
-
-                <p>
-                    My journey started with programming and gradually
-                    expanded into Machine Learning, Deep Learning,
-                    Generative AI, RAG and AI Engineering.
-                </p>
-
-                <p>
-                    I believe the best way to learn AI is to build.
-                    That's why I focus on turning concepts into real
-                    applications, deploying them and documenting what
-                    I learn.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <div class="about-card-item">
-                    <span>Focus</span>
-                    <strong>AI Engineering</strong>
-                </div>
-
-                <div class="about-card-item">
-                    <span>Currently Learning</span>
-                    <strong>GenAI + RAG</strong>
-                </div>
-
-                <div class="about-card-item">
-                    <span>Building</span>
-                    <strong>Production AI Apps</strong>
-                </div>
-
-                <div class="about-card-item">
-                    <span>Mission</span>
-                    <strong>Become AI Engineer</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Mission Timeline -->
-
-        <div class="mission-timeline">
-
-            <div class="timeline-item active">
-                <span>01</span>
-                <strong>START</strong>
-            </div>
-
-            <div class="timeline-line"></div>
-
-            <div class="timeline-item">
-                <span>02</span>
-                <strong>LEARN</strong>
-            </div>
-
-            <div class="timeline-line"></div>
-
-            <div class="timeline-item">
-                <span>03</span>
-                <strong>BUILD</strong>
-            </div>
-
-            <div class="timeline-line"></div>
-
-            <div class="timeline-item">
-                <span>04</span>
-                <strong>DEPLOY</strong>
-            </div>
-
-            <div class="timeline-line"></div>
-
-            <div class="timeline-item">
-                <span>05</span>
-                <strong>INTERVIEW READY</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SKILLS ================= -->
-
-<section class="skills-section" id="skills">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">02 — SKILLS</p>
-
-            <h2>
-                My AI Engineering
-                <span>toolkit.</span>
-            </h2>
-
-            <p>
-                Technologies and tools I'm using to build,
-                deploy and improve AI applications.
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <!-- Programming -->
-
-            <div class="skill-card">
-
-                <div class="skill-number">01</div>
-
-                <h3>Programming</h3>
-
-                <p>
-                    Core programming and development tools.
-                </p>
-
-                <div class="skill-tags">
-
-                    <span>Python</span>
-                    <span>SQL</span>
-                    <span>Git</span>
-                    <span>GitHub</span>
-                    <span>Linux</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- ML -->
-
-            <div class="skill-card">
-
-                <div class="skill-number">02</div>
-
-                <h3>AI / Machine Learning</h3>
-
-                <p>
-                    Data analysis, machine learning and
-                    deep learning fundamentals.
-                </p>
-
-                <div class="skill-tags">
-
-                    <span>NumPy</span>
-                    <span>Pandas</span>
-                    <span>Scikit-learn</span>
-                    <span>PyTorch</span>
-                    <span>Deep Learning</span>
-                    <span>NLP</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- GenAI -->
-
-            <div class="skill-card">
-
-                <div class="skill-number">03</div>
-
-                <h3>Generative AI</h3>
-
-                <p>
-                    Building applications powered by modern
-                    LLM technologies.
-                </p>
-
-                <div class="skill-tags">
-
-                    <span>LLMs</span>
-                    <span>RAG</span>
-                    <span>Embeddings</span>
-                    <span>Vector DB</span>
-                    <span>AI Agents</span>
-                    <span>Prompt Engineering</span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Backend -->
-
-            <div class="skill-card">
-
-                <div class="skill-number">04</div>
-
-                <h3>Backend & Deployment</h3>
-
-                <p>
-                    Building APIs and deploying AI applications.
-                </p>
-
-                <div class="skill-tags">
-
-                    <span>FastAPI</span>
-                    <span>REST APIs</span>
-                    <span>Docker</span>
-                    <span>Cloud</span>
-                    <span>CI/CD</span>
-                    <span>MLOps</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- ================= PROJECTS PLACEHOLDER ================= -->
-
-        <section id="projects" class="section projects-section">
-    <div class="container">
-
-        <div class="section-heading">
-            <p class="section-label">03 / PROJECTS</p>
-            <h2>Projects That Prove My Skills</h2>
-            <p>
-                Real-world AI projects focused on solving practical problems
-                using Machine Learning, Generative AI and backend technologies.
-            </p>
-        </div>
-
-        <div class="projects-grid">
-
-            <!-- Project 1 -->
-            <article class="project-card">
-
-                <div class="project-number">01</div>
-
-                <h3>AI Resume Analyzer</h3>
-
-                <p>
-                    An AI-powered application that analyzes resumes,
-                    extracts important skills and compares them with
-                    job requirements to provide useful feedback.
-                </p>
-
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>NLP</span>
-                    <span>FastAPI</span>
-                    <span>LLM</span>
-                </div>
-
-                <div class="project-links">
-                    <a href="#" class="project-btn">
-                        GitHub ↗
-                    </a>
-
-                    <a href="#" class="project-btn primary">
-                        Live Demo ↗
-                    </a>
-                </div>
-
-            </article>
-
-
-            <!-- Project 2 -->
-            <article class="project-card">
-
-                <div class="project-number">02</div>
-
-                <h3>RAG PDF Chatbot</h3>
-
-                <p>
-                    A Retrieval-Augmented Generation chatbot that allows
-                    users to upload PDF documents and ask questions using
-                    semantic search and large language models.
-                </p>
-
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>RAG</span>
-                    <span>Embeddings</span>
-                    <span>Vector DB</span>
-                </div>
-
-                <div class="project-links">
-                    <a href="#" class="project-btn">
-                        GitHub ↗
-                    </a>
-
-                    <a href="#" class="project-btn primary">
-                        Live Demo ↗
-                    </a>
-                </div>
-
-            </article>
-
-
-            <!-- Project 3 -->
-            <article class="project-card">
-
-                <div class="project-number">03</div>
-
-                <h3>AI Interview Coach</h3>
-
-                <p>
-                    An AI interview preparation platform that generates
-                    questions, evaluates answers and provides personalized
-                    feedback to help candidates improve their interviews.
-                </p>
-
-                <div class="project-tech">
-                    <span>Python</span>
-                    <span>LLM</span>
-                    <span>FastAPI</span>
-                    <span>GenAI</span>
-                </div>
-
-                <div class="project-links">
-                    <a href="#" class="project-btn">
-                        GitHub ↗
-                    </a>
-
-                    <a href="#" class="project-btn primary">
-                        Live Demo ↗
-                    </a>
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-</section>
-<!-- ================================
-     PROJECT CASE STUDIES
-================================ -->
-
-<section id="case-studies" class="section case-study-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <p class="section-label">04 / PROJECT PROOF</p>
-
-            <h2>How I Build AI Systems</h2>
-
-            <p>
-                I focus on solving real problems and building AI systems
-                that can be tested, deployed and improved.
-            </p>
-        </div>
-
-
-        <!-- CASE STUDY 1 -->
-
-        <article class="case-study">
-
-            <div class="case-study-header">
-
-                <div>
-                    <span class="case-study-number">01</span>
-
-                    <h3>AI Resume Analyzer</h3>
-                </div>
-
-                <span class="status-badge">
-                    Building
-                </span>
-
-            </div>
-
-
-            <div class="case-study-grid">
-
-                <div class="case-study-content">
-
-                    <h4>Problem</h4>
-
-                    <p>
-                        Job seekers often struggle to understand whether
-                        their resume matches a specific job description.
-                    </p>
-
-
-                    <h4>Solution</h4>
-
-                    <p>
-                        Build an AI-powered resume analyzer that extracts
-                        skills from a resume and compares them with the
-                        requirements of a job description.
-                    </p>
-
-
-                    <h4>How It Works</h4>
-
-                    <div class="workflow">
-
-                        <div class="workflow-step">
-                            <span>01</span>
-                            <p>Upload Resume</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>02</span>
-                            <p>Extract Text</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>03</span>
-                            <p>Analyze Skills</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>04</span>
-                            <p>Generate Feedback</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="case-study-sidebar">
-
-                    <h4>Tech Stack</h4>
-
-                    <div class="case-tech">
-                        <span>Python</span>
-                        <span>NLP</span>
-                        <span>FastAPI</span>
-                        <span>LLM</span>
-                        <span>REST API</span>
-                    </div>
-
-
-                    <h4>Key Features</h4>
-
-                    <ul class="feature-list">
-                        <li>Resume text extraction</li>
-                        <li>Skill identification</li>
-                        <li>Job description comparison</li>
-                        <li>AI-generated feedback</li>
-                    </ul>
-
-
-                    <div class="case-study-buttons">
-
-                        <a href="#" class="project-btn">
-                            GitHub ↗
-                        </a>
-
-                        <a href="#" class="project-btn primary">
-                            Live Demo ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- CASE STUDY 2 -->
-
-        <article class="case-study">
-
-            <div class="case-study-header">
-
-                <div>
-                    <span class="case-study-number">02</span>
-
-                    <h3>RAG PDF Chatbot</h3>
-                </div>
-
-                <span class="status-badge">
-                    Planned
-                </span>
-
-            </div>
-
-
-            <div class="case-study-grid">
-
-                <div class="case-study-content">
-
-                    <h4>Problem</h4>
-
-                    <p>
-                        Searching through large PDF documents manually
-                        can be slow and inefficient.
-                    </p>
-
-
-                    <h4>Solution</h4>
-
-                    <p>
-                        Build a Retrieval-Augmented Generation system that
-                        retrieves relevant information from uploaded PDFs
-                        before generating an answer with an LLM.
-                    </p>
-
-
-                    <h4>How It Works</h4>
-
-                    <div class="workflow">
-
-                        <div class="workflow-step">
-                            <span>01</span>
-                            <p>Upload PDF</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>02</span>
-                            <p>Create Chunks</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>03</span>
-                            <p>Vector Search</p>
-                        </div>
-
-                        <div class="workflow-arrow">→</div>
-
-                        <div class="workflow-step">
-                            <span>04</span>
-                            <p>LLM Answer</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="case-study-sidebar">
-
-                    <h4>Tech Stack</h4>
-
-                    <div class="case-tech">
-                        <span>Python</span>
-                        <span>RAG</span>
-                        <span>Embeddings</span>
-                        <span>Vector DB</span>
-                        <span>LLM</span>
-                    </div>
-
-
-                    <h4>Key Features</h4>
-
-                    <ul class="feature-list">
-                        <li>PDF document ingestion</li>
-                        <li>Text chunking</li>
-                        <li>Semantic search</li>
-                        <li>Context-aware answers</li>
-                    </ul>
-
-
-                    <div class="case-study-buttons">
-
-                        <a href="#" class="project-btn">
-                            GitHub ↗
-                        </a>
-
-                        <a href="#" class="project-btn primary">
-                            Live Demo ↗
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-       <!-- ================================
-     AI ENGINEERING JOURNEY
-================================ -->
-
-<section id="experience" class="section journey-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <p class="section-label">05 / JOURNEY</p>
-
-            <h2>My AI Engineering Journey</h2>
-
-            <p>
-                A structured journey from learning fundamentals to
-                building and deploying real-world AI systems.
-            </p>
-
-        </div>
-
-
-        <div class="journey-timeline">
-
-
-            <!-- STEP 1 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    01
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        START
-                    </span>
-
-                    <h3>Build the Foundation</h3>
-
-                    <p>
-                        Strengthen programming fundamentals, problem
-                        solving, Git, GitHub and development workflows.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>Python</span>
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>DSA</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 2 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    02
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        LEARN
-                    </span>
-
-                    <h3>Learn AI & Machine Learning</h3>
-
-                    <p>
-                        Learn machine learning, deep learning, NLP and
-                        the mathematical concepts required to understand
-                        modern AI systems.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                        <span>Scikit-learn</span>
-                        <span>PyTorch</span>
-                        <span>NLP</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 3 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    03
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        BUILD
-                    </span>
-
-                    <h3>Build Real AI Projects</h3>
-
-                    <p>
-                        Turn concepts into practical applications using
-                        Machine Learning, Generative AI, LLMs and RAG.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>LLMs</span>
-                        <span>RAG</span>
-                        <span>Embeddings</span>
-                        <span>AI Agents</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 4 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    04
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        DEPLOY
-                    </span>
-
-                    <h3>Deploy AI Applications</h3>
-
-                    <p>
-                        Learn how to turn AI prototypes into usable
-                        applications with APIs, containers, cloud
-                        platforms and production workflows.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>FastAPI</span>
-                        <span>Docker</span>
-                        <span>REST APIs</span>
-                        <span>Cloud</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 5 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    05
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        DOCUMENT
-                    </span>
-
-                    <h3>Document & Prove</h3>
-
-                    <p>
-                        Document projects, write technical articles,
-                        maintain GitHub repositories and build measurable
-                        proof of engineering skills.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>GitHub</span>
-                        <span>Blogs</span>
-                        <span>Case Studies</span>
-                        <span>Documentation</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 6 -->
-
-            <div class="journey-item">
-
-                <div class="journey-dot">
-                    06
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        INTERVIEW READY
-                    </span>
-
-                    <h3>Prepare for AI Engineering Roles</h3>
-
-                    <p>
-                        Strengthen DSA, system design, AI fundamentals,
-                        project explanations and technical interview
-                        communication.
-                    </p>
-
-                    <div class="journey-skills">
-                        <span>DSA</span>
-                        <span>System Design</span>
-                        <span>AI Fundamentals</span>
-                        <span>Interviews</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FINAL -->
-
-            <div class="journey-item final-journey">
-
-                <div class="journey-dot">
-                    🚀
-                </div>
-
-                <div class="journey-content">
-
-                    <span class="journey-status">
-                        DESTINATION
-                    </span>
-
-                    <h3>AI Engineer</h3>
-
-                    <p>
-                        Build intelligent, reliable and production-ready
-                        AI systems that solve real-world problems.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-        <!-- ================= ACHIEVEMENTS ================= -->
-
-        <section class="placeholder-section" id="achievements">
-
-            <div class="container">
-
-                <p class="section-label">05 — ACHIEVEMENTS</p>
-
-                <h2>
-                    Milestones &
-                    <span>Achievements.</span>
-                </h2>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= BLOG ================= -->
-
-        <section class="placeholder-section" id="blog">
-
-            <div class="container">
-
-                <p class="section-label">06 — BLOG</p>
-
-                <h2>
-                    What I'm
-                    <span>learning.</span>
-                </h2>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= CONTACT ================= -->
-
-        <section class="contact-section" id="contact">
-
-            <div class="container contact-container">
-
-                <p class="section-label">07 — CONTACT</p>
-
-                <h2>
-                    Let's build something
-                    <span>with AI.</span>
-                </h2>
-
-                <p>
-                    Have an idea, opportunity or project?
-                    Let's connect.
-                </p>
-
-                <a
-                    href="mailto:your.email@example.com"
-                    class="btn btn-primary"
-                >
-                    Get In Touch
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="container footer-container">
-
-            <p>
-                © 2026 AI Engineer Portfolio
-            </p>
-
-            <p>
-                Built with HTML • CSS • JavaScript
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
+<a class="skip" href="#main">Skip to content</a>
+<div id="bar" aria-hidden="true"></div>
+<header><div class="wrap nav">
+<a class="brand" href="#home">Ankit Gupta</a>
+<button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Education</a><a href="#resume">Resume</a><a href="#github">GitHub</a><a class="cta" href="#contact">Contact me</a></nav>
+</div></header>
+
+<main id="main">
+<div class="wrap hero" id="home">
+<div class="rv">
+<span class="pill"><i></i>Open to internships and entry-level roles</span>
+<h1>Building intelligent AI systems that <span class="grad">solve real-world problems.</span></h1>
+<p class="title">AI Engineer | Machine Learning | Generative AI | LLM Applications</p>
+<p class="lead">I’m an aspiring AI engineer passionate about building scalable AI applications, intelligent automation systems and production-ready machine learning solutions.</p>
+<div class="actions"><a class="btn pri" href="#projects">View projects</a><a class="btn" data-link="resume" href="resume.pdf">Download resume</a><a class="btn" href="#contact">Contact me</a></div>
+<p class="mail">Prefer email? <a data-link="email" href="mailto:ankitguptaa2026@gmail.com">ankitguptaa2026@gmail.com</a></p>
+<div class="social">
+<a data-link="github" href="https://github.com/yourusername" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+<a data-link="linkedin" href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.82-2 3.75-2 4 0 4.74 2.6 4.74 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></a>
+<a data-link="email" href="mailto:ankitguptaa2026@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v.1l7.5 5.2 7.5-5.2V7z"/></svg></a>
+</div>
+</div>
+<aside class="glass stats rv" aria-label="Quick facts">
+<div><span>Education</span><b>B.Tech CSE, 2026<br>CGPA 8.67/10</b></div>
+<div><span>Focus</span><b>Agentic AI, RAG, LLMs</b></div>
+<div><span>Core stack</span><b>Python, PyTorch, LangGraph, FastAPI</b></div>
+<div><span>Projects</span><b>4 end-to-end AI/ML projects</b></div>
+<div><span>Practice</span><b>100+ DSA problems solved</b></div>
+</aside>
+</div>
+
+<section id="about"><div class="wrap">
+<div class="head rv"><h2>About me</h2><p>My journey, interests and what I’m aiming for.</p></div>
+<div class="about rv">
+<div class="glass"><p>I’m a B.Tech Computer Science student who started with Python and problem solving, then moved into machine learning, deep learning and generative AI. I now spend most of my time building LLM-powered workflows, retrieval pipelines and multi-agent systems.</p>
+<p>I like problems where a model alone isn’t enough: connecting tools and data, handling errors, evaluating output and serving it through reliable APIs with FastAPI and Docker. I approach each project end to end and document it on GitHub.</p>
+<p>My goal is to join a leading product company as an AI Engineer, contribute to real AI products and keep learning from experienced engineers.</p></div>
+<div class="focus"><div class="glass"><b>Machine learning and GenAI</b><span>Models, embeddings, RAG and agents</span></div><div class="glass"><b>Problem solving</b><span>100+ DSA problems solved</span></div><div class="glass"><b>Real-world applications</b><span>APIs, tools, evaluation, monitoring</span></div></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<div class="head rv"><h2>Technical skills</h2><p>Tools and techniques I use across my projects, grouped by area.</p></div>
+<div class="skills rv">
+<div class="glass skill"><h3>Languages and CS</h3><div class="chips"><span>Python</span><span>SQL</span><span>C++ basics</span><span>Data structures</span><span>Algorithms</span></div></div>
+<div class="glass skill"><h3>Machine learning</h3><div class="chips"><span>Scikit-learn</span><span>Regression</span><span>Classification</span><span>Random Forest</span><span>XGBoost</span><span>Feature engineering</span><span>Model evaluation</span><span>Cross-validation</span></div></div>
+<div class="glass skill"><h3>Deep learning</h3><div class="chips"><span>PyTorch</span><span>Neural networks</span><span>CNNs</span><span>Optimization</span><span>Transfer learning</span></div></div>
+<div class="glass skill"><h3>Generative AI</h3><div class="chips"><span>LLMs</span><span>Prompt engineering</span><span>Embeddings</span><span>Function calling</span><span>Structured outputs</span><span>Fine-tuning</span><span>LoRA / QLoRA</span></div></div>
+<div class="glass skill"><h3>Agentic AI and RAG</h3><div class="chips"><span>LangChain</span><span>LangGraph</span><span>Tool calling</span><span>Multi-agent systems</span><span>MCP</span><span>Agent memory</span><span>FAISS</span><span>Vector databases</span><span>Reranking</span><span>Hybrid search</span><span>RAG evaluation</span></div></div>
+<div class="glass skill"><h3>Backend, tools and MLOps</h3><div class="chips"><span>FastAPI</span><span>Docker</span><span>PostgreSQL</span><span>Git and GitHub</span><span>Linux</span><span>Bash</span><span>CI/CD</span><span>Experiment tracking</span><span>Model monitoring</span><span>AWS / GCP basics</span></div></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head rv"><h2>Featured AI projects</h2><p>Open each project to see the approach and key features.</p></div>
+<div class="projects">
+<article class="glass proj rv">
+<div class="viz" aria-hidden="true"><span>Planner</span><i>→</i><span>Research</span><i>→</i><span>Data</span><i>→</i><span>Analyst</span><i>→</i><span>Reviewer</span></div>
+<div class="pbody"><div class="kind">Agentic AI</div><h3>Multi-Agent AI Research and Decision System</h3>
+<p><b>Problem:</b> complex questions need planning, evidence, data analysis and review, not a single prompt. This system splits the work across specialised agents.</p>
+<div class="chips"><span>Python</span><span>LangGraph</span><span>LLM</span><span>MCP</span><span>SQL</span><span>FastAPI</span><span>Docker</span></div>
+<details><summary>Approach and features</summary><ul><li>Planner, Research, Data, Analyst and Reviewer agents.</li><li>LangGraph orchestration with state management, tool calling and conditional workflows.</li><li>External tools and data sources integrated through MCP, plus SQL retrieval and automated analysis.</li><li>FastAPI backend, containerized with Docker.</li><li>Logging, error handling, evaluation and workflow monitoring.</li></ul></details>
+<div class="links"><a data-link="repo1" href="https://github.com/yourusername/multi-agent-system" target="_blank" rel="noreferrer">GitHub</a></div></div>
+</article>
+<article class="glass proj rv">
+<div class="viz" aria-hidden="true"><span>Resume</span><i>→</i><span>Embed</span><i>→</i><span>FAISS</span><i>→</i><span>Summary</span><i>→</i><span>Rank</span></div>
+<div class="pbody"><div class="kind">NLP · Embeddings</div><h3>AI Resume Screening and Job Matching System</h3>
+<p><b>Problem:</b> comparing many resumes with a job description by hand is slow and inconsistent. This system ranks candidates by semantic similarity and explains the match.</p>
+<div class="chips"><span>Python</span><span>NLP</span><span>Transformers</span><span>FAISS</span><span>LLM</span><span>FastAPI</span></div>
+<details><summary>Approach and features</summary><ul><li>Parses resumes and compares candidates with job descriptions.</li><li>Semantic embeddings with similarity-based matching in FAISS.</li><li>LLM-generated candidate summaries, skill-gap analysis and interview questions.</li><li>REST APIs with FastAPI for resume processing and candidate ranking.</li><li>Structured outputs and evaluation for consistent results.</li></ul></details>
+<div class="links"><a data-link="repo2" href="https://github.com/yourusername/resume-screening" target="_blank" rel="noreferrer">GitHub</a></div></div>
+</article>
+</div></div></section>
+
+<section id="experience"><div class="wrap">
+<div class="head rv"><h2>Education and achievements</h2><p>Academic background and milestones so far.</p></div>
+<div class="tl rv">
+<div class="glass card"><small>2022 to 2026 · Gurgaon, Haryana</small><h3>B.Tech, Computer Science and Engineering</h3><p>BM Group of Institutions. CGPA: 8.67/10.</p></div>
+<div class="glass card"><small>2021 to 2022 · Surat, Gujarat</small><h3>Class 12, UP Board</h3><p>MGM Inter College. Score: 315/500.</p></div>
+<div class="glass card"><small>Achievements</small><h3>4 end-to-end AI/ML projects</h3><p>Plus 100+ DSA problems solved and documented projects on GitHub.</p></div>
+<div class="glass card"><small>Hackathons</small><h3>Technical competitions</h3><p>Participated in hackathons and technical competitions.</p></div>
+</div></div></section>
+
+<section id="resume"><div class="wrap">
+<div class="head rv"><h2>Resume</h2><p>A one-page summary of my education, skills and projects.</p></div>
+<div class="glass resume rv">
+<div class="doc" aria-hidden="true"><b>Ankit Gupta</b><em>AI/ML Engineer</em><u>Education</u>B.Tech CSE, 2022 to 2026, CGPA 8.67<u>Skills</u>Python, PyTorch, LangGraph, FastAPI, RAG, Docker<u>Projects</u>Multi-Agent AI Research System<br>AI Resume Screening System<u>Achievements</u>4 AI/ML projects · 100+ DSA problems</div>
+<div><h3>Ankit Gupta · AI/ML Engineer</h3><p>Download the PDF or open it in a new tab.</p>
+<div class="actions" style="margin:0"><a class="btn pri" data-link="resume" href="resume.pdf" download>Download PDF</a><a class="btn" data-link="resume" href="resume.pdf" target="_blank" rel="noreferrer">View resume</a></div></div>
+</div></div></section>
+
+<section id="github"><div class="wrap">
+<div class="head rv"><h2>GitHub</h2><p>Source code and documentation for my projects.</p></div>
+<div class="cgrid rv">
+<a class="glass card" data-link="repo1" href="https://github.com/yourusername/multi-agent-system" target="_blank" rel="noreferrer"><small>Project</small><h3>Multi-Agent AI Research System</h3><p>LangGraph, MCP, SQL, FastAPI, Docker.</p></a>
+<a class="glass card" data-link="repo2" href="https://github.com/yourusername/resume-screening" target="_blank" rel="noreferrer"><small>Project</small><h3>AI Resume Screening System</h3><p>Embeddings, FAISS, LLMs, FastAPI.</p></a>
+</div>
+<div class="actions rv"><a class="btn pri" data-link="github" href="https://github.com/yourusername" target="_blank" rel="noreferrer">View GitHub profile</a></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="head rv"><h2>Contact me</h2><p>For internships, entry-level roles, collaborations or project questions.</p></div>
+<div class="contact rv">
+<div class="glass cinfo"><b>Let’s talk</b><ul>
+<li><span>Email</span><a data-link="email" href="mailto:ankitguptaa2026@gmail.com">ankitguptaa2026@gmail.com</a></li>
+<li><span>LinkedIn</span><a data-link="linkedin" href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noreferrer">linkedin.com/in/ankitgupta2026</a></li>
+<li><span>GitHub</span><a data-link="github" href="https://github.com/yourusername" target="_blank" rel="noreferrer">github.com/ankitgupta2026</a></li></ul><div class="actions"><a class="btn pri" data-link="email" href="mailto:ankitguptaa2026@gmail.com">Email me</a><a class="btn" data-link="resume" href="resume.pdf">Resume</a></div></div>
+<form class="glass" id="contactForm">
+<label>Name<input id="fName" autocomplete="name" required></label>
+<label>Email<input id="fEmail" type="email" autocomplete="email" required></label>
+<label>Subject<input id="fSubject" required></label>
+<label>Message<textarea id="fMsg" required></textarea></label>
+<button class="btn pri" type="submit">Send message</button>
+<p class="note">This opens your email app with your message ready to send.</p>
+</form></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="year"></span> Ankit Gupta</span><span>AI Engineer</span></div></footer>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+// Edit your links here. Every element with a data-link attribute is updated.
+const LINKS={github:'https://github.com/ankitgupta2026',linkedin:'https://www.linkedin.com/in/ankitgupta2026/',email:'mailto:ankitguptaa2026@gmail.com',resume:'resume.pdf',
+repo1:'https://github.com/ankitgupta2026',repo2:'https://github.com/ankitgupta2026',demo1:'https://your-live-demo-link.com',demo2:'https://your-live-demo-link.com'};
+document.querySelectorAll('[data-link]').forEach(a=>{const u=LINKS[a.dataset.link];if(u)a.setAttribute('href',u)});
+document.documentElement.classList.add('js');
+document.getElementById('year').textContent=new Date().getFullYear();
+addEventListener('beforeprint',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+document.querySelectorAll('.hero>div:first-child>*,.skills>*,.tl>*,.cgrid>*,.focus>*').forEach(el=>{el.style.animationDelay=([...el.parentNode.children].indexOf(el)*.09)+'s'});
+const btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+btn.addEventListener('click',()=>btn.setAttribute('aria-expanded',String(nav.classList.toggle('open'))));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const links=[...nav.querySelectorAll('a:not(.cta)')];
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('act',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section').forEach(s=>spy.observe(s));
+const toTop=document.getElementById('top'),bar=document.getElementById('bar');
+addEventListener('scroll',()=>{toTop.classList.toggle('show',scrollY>600);bar.style.transform='scaleX('+Math.min(1,scrollY/((document.documentElement.scrollHeight-innerHeight)||1))+')'},{passive:true});
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();
+const g=id=>document.getElementById(id).value.trim();
+const body='Name: '+g('fName')+'\nEmail: '+g('fEmail')+'\n\n'+g('fMsg');
+location.href=LINKS.email.replace('mailto:','mailto:')+'?subject='+encodeURIComponent(g('fSubject'))+'&body='+encodeURIComponent(body)});
+</script>
 </body>
 </html>
