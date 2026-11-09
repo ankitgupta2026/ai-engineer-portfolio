@@ -1,113 +1,157 @@
-# Ankit Gupta | AI Engineer Portfolio
+# 👨‍💻 Ankit Gupta | AI Engineer Portfolio
 
-A fast, single-page personal portfolio built with plain HTML, CSS and vanilla JavaScript. No frameworks, no build step, no dependencies other than the Inter font from Google Fonts.
+<p align="center">
+  <b>Building Intelligent AI Systems That Solve Real-World Problems.</b>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Role-Aspiring%20AI%20Engineer-8b9cff?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Focus-AI%20%7C%20ML%20%7C%20GenAI-58e0c1?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-success?style=for-the-badge" />
+</p>
 
-- Dark, responsive design for desktop, tablet and mobile
-- Sections: Hero, About, Skills, Featured Projects, Education and Achievements, Resume, GitHub, Contact
-- Expandable project cards with problem statement, approach and features
-- Scroll animations, scroll progress bar, active-section highlighting in the navigation
-- Mobile menu, back-to-top button, skip-to-content link, visible keyboard focus
-- Respects the visitor's reduced-motion setting
-- Print and Save-as-PDF friendly (clean light layout, project details expanded)
-- SEO metadata, Open Graph tags, JSON-LD profile data and an inline favicon
+## 🌐 About the Portfolio
 
-## Project structure
+Welcome to my personal AI Engineer portfolio!
 
-```
-portfolio/
-├── index.html      # The whole site (HTML, CSS and JavaScript in one file)
-├── resume.pdf      # Your resume (you add this file)
+This website showcases my technical skills, AI/ML projects, learning journey, and engineering interests.
+
+My goal is to build practical, scalable, and production-ready AI applications using modern technologies.
+
+## 🚀 Website Features
+
+- Modern dark-themed UI
+- Fully responsive design
+- Professional hero section
+- About Me section
+- Technical skills showcase
+- Featured AI projects
+- Experience and education timeline
+- Resume download section
+- Certifications showcase
+- GitHub and LinkedIn integration
+- Contact section
+- Smooth scrolling and animations
+- SEO-friendly structure
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Programming | Python, C++, SQL |
+| Machine Learning | Scikit-learn, NumPy, Pandas |
+| Deep Learning | PyTorch, TensorFlow |
+| Generative AI | LLMs, RAG, AI Agents |
+| Backend | FastAPI, REST APIs |
+| Database | PostgreSQL, MongoDB |
+| Tools | Git, GitHub, Docker |
+
+*The technologies above represent my learning and project focus. See individual projects for implemented tools.*
+
+## 🧠 Featured Projects
+
+### 1. AI PDF Study Assistant
+- Upload and analyze PDF documents.
+- Ask questions using natural language.
+- Retrieve relevant information using RAG.
+- Generate context-aware answers.
+
+**Tech:** Python, LLMs, RAG, Vector Database.
+
+### 2. AI Research Agent
+- Research automation.
+- Structured report generation.
+- AI-powered information processing.
+
+**Tech:** Python, LLMs, AI Agents.
+
+### 3. AI Exam Preparation Platform
+- AI-powered question generation.
+- Personalized learning assistance.
+- Quiz and performance analytics.
+
+**Tech:** Python, Generative AI, SQL.
+
+### 4. Predictive Analytics System
+- Data preprocessing.
+- Machine learning model training.
+- Model evaluation and deployment.
+
+**Tech:** Python, Pandas, Scikit-learn.
+
+## 📂 Project Structure
+
+```text
+ankit-ai-portfolio/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── certificates/
+│
+├── resume/
+│   └── resume.pdf
+│
 └── README.md
 ```
 
-Rename `ankit-portfolio-premium.html` to `index.html` before deploying.
+*Adjust this structure to match your actual project files.*
 
-## Run locally
+## ⚙️ Run Locally
 
-Open `index.html` in a browser. Or serve the folder:
+1. Clone the repository:
 
 ```bash
-python3 -m http.server 8000
-# then visit http://localhost:8000
+git clone https://github.com/yourusername/ankit-ai-portfolio.git
 ```
 
-## Customize
+2. Open the project folder:
 
-### 1. Links
-
-All links are set in one place, the `LINKS` object near the bottom of `index.html`:
-
-```js
-const LINKS = {
-  github:   'https://github.com/ankitgupta2026',
-  linkedin: 'https://www.linkedin.com/in/ankitgupta2026/',
-  email:    'mailto:ankitguptaa2026@gmail.com',
-  resume:   'resume.pdf',
-  repo1:    'https://github.com/ankitgupta2026',   // Multi-Agent project repo
-  repo2:    'https://github.com/ankitgupta2026',   // Resume Screening project repo
-  demo1:    '...', demo2: '...'                    // only used if a demo link exists
-};
+```bash
+cd ankit-ai-portfolio
 ```
 
-Every element with a `data-link="name"` attribute is updated from this object.
+3. Open `index.html` in your browser or use the VS Code Live Server extension.
 
-### 2. Things to complete
+## 🌍 Deployment
 
-| Item | What to do |
-| --- | --- |
-| Resume | Put `resume.pdf` next to `index.html`. |
-| Project repos | Set `repo1` and `repo2` to the exact repository URLs. |
-| Live demos | Add a `<a data-link="demo1" ...>Live demo</a>` link to a project card once a demo is live, and set `demo1` in `LINKS`. |
-| Certifications | Add a section with each certificate's name, issuer, date and verification link once you have them. |
-| Open Graph image | Add `<meta property="og:image" content="https://your-site/preview.png">` for a link preview image. |
-| Site URL | Add `<link rel="canonical" href="https://your-site/">` after deploying. |
+You can deploy this portfolio using:
 
-### 3. Add a project
+- GitHub Pages
+- Vercel
+- Netlify
 
-Copy an existing `<article class="glass proj rv">` block in the Projects section, then edit the title, problem statement, tags, features and links.
+## 🎯 Career Objective
 
-## Deploy
+I am working towards becoming a strong AI Engineer, focusing on:
 
-### GitHub Pages (free)
+- Machine Learning Engineering
+- Deep Learning
+- Generative AI
+- Large Language Models
+- AI Agents
+- Production AI Systems
+- Software Engineering and DSA
 
-1. Create a repository named `ankitgupta2026.github.io` (or any name).
-2. Upload `index.html` and `resume.pdf`.
-3. Go to **Settings > Pages**, choose the `main` branch and the `/ (root)` folder, then save.
-4. Your site is live at `https://ankitgupta2026.github.io/` in about a minute.
+I am interested in internships and entry-level opportunities where I can contribute to real-world engineering projects.
 
-### Netlify (free)
+## 📬 Connect With Me
 
-1. Sign in at netlify.com and choose **Add new site > Deploy manually**.
-2. Drag the folder containing `index.html` and `resume.pdf` onto the page.
-3. Optionally add a custom domain under **Domain settings**.
+- **Name:** Ankit Gupta
+- **LinkedIn:** https://linkedin.com/in/yourusername
+- **GitHub:** https://github.com/yourusername
+- **Email:** your.email@example.com
+- **Portfolio:** Add your deployed website URL here.
 
-### Vercel (free)
+---
 
-1. Push the folder to a GitHub repository.
-2. Import the repository in vercel.com. Framework preset: **Other**. No build command needed.
-
-### Custom 404 page
-
-GitHub Pages and Netlify both serve a file named `404.html` for missing pages. Create one with a short message and a link back to `/`.
-
-## Contact form
-
-The form opens the visitor's email app with the message prepared (a `mailto:` link). It does not send mail from a server. To receive messages directly in your inbox:
-
-1. Create a free form endpoint with a service such as Formspree or Web3Forms.
-2. Replace the submit handler in the script with a `fetch` POST to that endpoint, or set the form's `action` to the endpoint URL.
-3. Show a success or error message after submitting.
-
-## Quality checklist before sharing
-
-- [ ] Every link opens the right page (GitHub, LinkedIn, repos, resume).
-- [ ] `resume.pdf` downloads correctly.
-- [ ] The site looks right on a phone.
-- [ ] Open the site in a private window and click through each navigation item.
-- [ ] Send a test message through the contact form.
-
-## Tech
-
-HTML5, CSS3 (custom properties, grid, flexbox), vanilla JavaScript (IntersectionObserver for reveal and active-nav). Font: Inter.
+<p align="center">
+  <b>Learn. Build. Experiment. Improve.</b>
+  <br/>
+  ⭐ If you find my portfolio interesting, feel free to explore my projects!
+</p>
